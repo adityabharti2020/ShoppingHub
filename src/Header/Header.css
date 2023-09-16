@@ -1,0 +1,261 @@
+.header{
+    max-height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: flex-start;
+    padding: 10px 0;
+    background: linear-gradient(to right,#cbcdd1,#3598ef);
+
+    position:relative;
+
+}
+
+.logo img{
+    align-items: flex-start;
+    width: auto;
+    height: 10vh;
+    padding: 10px;
+}
+
+.logo{
+    margin: 0 0 0 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+.other-tabs{
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    position: relative;  
+}
+.other-subtabs{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    padding: 5px;
+    right: 100px;
+    
+}
+#img{
+    position: absolute;
+    top: 17px;
+    right:140px;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    /* transition: width  5s; */
+
+}
+.other-subtabs a{
+    text-decoration: none;
+    color: rgb(244, 241, 241);
+    font-size: 18px;
+    margin-right: 50px;
+    padding: 5px;
+    position: relative;
+    
+}
+.loginsection a{
+    right: 550px;
+    position: absolute;
+    text-decoration: none;
+    top: 22px;
+    display: block;
+    padding: 8px 30px;
+    cursor: pointer;
+    margin: auto;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    transition: 0.5s;
+    background: linear-gradient(to right,#1a32ed,#f3f5f3);
+    font-weight: bold;
+    color: rgb(240, 245, 240);
+    
+}
+.search-bar input{
+    width: 190%;
+    height: 42px;
+    margin-top: 10px;
+    margin-left: 100px;
+    border-radius: 5px;
+    padding: 5px;
+    
+}
+.search-bar{
+    position: relative;
+}
+.search-bar img{
+    position: absolute;
+    top: 10px;
+    width: 45px;
+    height: 45px;
+    left:560px;
+    cursor: pointer;
+}
+.cart{
+    position: absolute;
+    display: block;
+    top: 2px;
+    right: -10px; 
+     
+}
+.other-subtabs ul li a{
+    color:rgb(5, 4, 4);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 20px;
+
+}
+.other-subtabs ul{
+    position: absolute;
+    background: #f9f7f7;
+    list-style-type: none;
+    width: 80%;
+    height: 160px;
+    top: 60px;
+    right: 35px;
+    border-radius: 2px;
+    box-shadow: 0 0 2px 2px rgb(174, 171, 171);
+    display: none;
+    z-index: 1;
+}
+/* [id^=drop-btn]:checked + ul{
+    display: block;
+} */
+
+.other-subtabs ul li{
+     line-height: 29px;
+     padding: 1px 8px;
+     margin-left: 15px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start ;
+    border-bottom: 1px  solid  rgb(209, 207, 207);
+}
+
+.other-subtabs .menu::before{
+    position: absolute;
+    content: '';
+    height:20px;
+    width: 20px;
+    background: rgb(250, 248, 248);
+    top: -10px;
+    right: 125px;
+    transform: rotate(45deg);
+}
+.icons{
+    position: absolute;
+    top: 12px;
+    left: -18px;
+}
+
+/* Media queries accourding to screen size */
+@media(max-width: 576px) and (min-width:290px){
+    .header{
+        display: flex;
+        flex-direction: column;
+        min-height: 130px;
+        min-width: 200%;
+        position: relative;
+    }
+    /* .logo{
+        order: 1;
+    }
+    .loginsection{
+        order: 2;
+    } */
+    .logo img{
+        align-items: flex-start;
+        width: 160px;
+        position: absolute;
+        top: 68px;
+        left: 0px;
+        height: 7vh;
+        padding: 10px;
+    }
+    .search-bar input{ 
+        width: 250%;
+        height: 45px;
+        margin-left: 30px;
+        border-radius: 5px;
+        
+    }
+    .search-bar{
+        position: absolute;
+        top: 10px;
+    }
+    .search-bar img{
+        position: absolute;
+        top: 15px;
+        width: 40px;
+        height: 40px;
+        left:470px;
+        cursor: pointer;
+    }
+    .loginsection a{
+        right: 120px;
+        width: 80px;
+        position: absolute;
+        /* text-decoration: none; */
+        top: 85px;
+        /* display: block; */
+        padding: 5px 15px;
+        /* cursor: pointer; */
+        /* margin: auto; */
+        /* border: 0; */
+        /* outline: none; */
+        border-radius: 30px;
+        /* transition: 0.5s; */
+        background: linear-gradient(to right,#1a32ed,#f3f5f3);
+        font-weight: bold;
+        color: rgb(240, 245, 240);
+        
+    }
+    .other-tabs{
+        display: flex;
+        justify-content: space-between;
+        width: auto;
+        position: relative;
+        order: -1;  
+    }
+    .other-subtabs{
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        top: 55px;
+        padding: 5px;
+        left: 155px;
+        
+    }
+    #img{
+        position: absolute;
+        top: 17px;
+        right:140px;
+        width: 10px;
+        height: 10px;
+        cursor: pointer;
+        /* transition: width  5s; */
+    
+    }
+    .other-subtabs a{
+        text-decoration: none;
+        color: rgb(244, 241, 241);
+        font-size: 18px;
+        margin-right: 50px;
+        padding: 5px;
+        position: relative;
+        
+    }
+
+}
+
+
+
+
+
