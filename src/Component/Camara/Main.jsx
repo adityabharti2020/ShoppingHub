@@ -16,6 +16,7 @@ const Main = ({items, searchitems}) => {
   // console.log(filteredItems);
   return (
     <div>
+      {/* {searchitems ? ' ' : ' '} */}
       {searchitems ? (searchitems?.itemDetail
 .map((newitem, index) => {
         return ( <div

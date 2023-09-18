@@ -330,6 +330,7 @@ nav ul{
     top: 350px;
     right:150px;
     border: none;
+    cursor: pointer;
 
     
   }

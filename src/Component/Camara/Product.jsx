@@ -1,7 +1,7 @@
 import React from "react";
 import "./main.css";
 import { useState, useEffect } from "react";
-import { Link, Navigate, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import Navigation from "./Navigation";
 // import { useSelector, useDispatch } from "react-redux";
 // import { increment, decrement } from "../../features/counter/counterSlice";
@@ -15,6 +15,7 @@ const Product = () => {
   const [itemInfo, setitemInfo] = useState(tempCartItems);
   const [Itemprice,setprice] = useState([0,0,0]);
   // console.log(tempCartItems);
+  const navigate =useNavigate();
   useEffect(() => {
     if (state) {
       setitemInfo(state);
@@ -68,10 +69,49 @@ const Product = () => {
       console.log(deliveryCharges);
     }
     let subtotal = totaldecrementPrice - percentage + deliveryCharges;
-    setprice([totaldecrementPrice,percentage,subtotal]);
-    
-    
+    setprice([totaldecrementPrice,percentage,subtotal]); 
   };
+
+  const displayRazorpay = (amount) => {
+    // e.preventDefault();
+    if(amount === 0){
+      alert('Please enter valid amount')
+    }else{
+      var options = {
+        key : "rzp_test_Kotf5HyoWEo0bV",
+        key_secret : 'pogq1tWIPlArPBaxvD8okd7N',
+        amount : amount,
+        currency : 'INR',
+        name : 'Test',
+        description : 'For testing purpose',
+        handler :
+          function(response){
+            alert(response.razorpay_payment_id);
+            if(response.razorpay_payment_id){
+              navigate('/camara')
+            }
+
+            
+      
+          },
+          prefill: {
+            name : 'aditya Bharti',
+            email : 'adityabharti.aktu2020@gmail.com',
+            contact : "9335265907"
+          },
+          notes : {
+            address : "RozerPay Corporate office"
+          },
+          theme : {
+            color : "#3399cc"
+          }
+      };
+      var pay = new window.Razorpay(options);
+      // console.log(options);
+      pay.open();
+    }
+    
+  }
   return (
     <>
       <Navigation />
@@ -148,7 +188,7 @@ const Product = () => {
           </div>
           <div className="shopping-btn">
             <div className="convermation-btn">
-              <button className="confirm-btn">Place Order</button>
+              <button className="confirm-btn" onClick={() => displayRazorpay(Itemprice[2])}>Buy Now</button>
                 
                 <Link to="/camara" className="Additem-btn">Add Item</Link>
 
